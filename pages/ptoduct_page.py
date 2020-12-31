@@ -4,15 +4,15 @@ from .locators import ProductPageLocators
 
 class ProductPage(BasePage):
 
-    def add_imet_to_the_cart(self):
-        self.should_be_add_to_cart_button()
-        self.add_to_cart()
+    def add_imet_to_the_basket(self):
+        self.should_be_add_to_basket_button()
+        self.add_to_basket()
 
-    def should_be_add_to_cart_button(self):
-        assert self.is_element_present(*ProductPageLocators.ADD_TO_CART_BUTTON), 'Can\'t find \'Add to cart\' button'
+    def should_be_add_to_basket_button(self):
+        assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET_BUTTON), 'Can\'t find \'Add to cart\' button'
 
-    def add_to_cart(self):
-        self.browser.find_element(*ProductPageLocators.ADD_TO_CART_BUTTON).click()
+    def add_to_basket(self):
+        self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON).click()
 
     def checking_names_and_prices(self):
         self.should_be_the_name_of_the_added_product()
